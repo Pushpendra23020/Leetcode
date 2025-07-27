@@ -1,0 +1,22 @@
+//binary number in a linked list to integer
+import java.util.LinkedList;
+import java.util.List;
+class Practise {
+    public static int getDecimalValue(List<Integer> head) {
+        int result = 0;
+        for (int bit : head) {
+            result = (result << 1) | bit; // Shift left and add the current bit
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> binaryList = new LinkedList<>();
+        binaryList.add(1);
+        binaryList.add(0);
+        binaryList.add(1);
+        binaryList.add(1);
+        
+        System.out.println("Decimal value: " + getDecimalValue(binaryList)); // Output: 11
+    }
+}
